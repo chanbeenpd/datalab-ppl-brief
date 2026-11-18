@@ -163,6 +163,22 @@ footer{background:#04060f;color:rgba(255,255,255,.4);font-size:13px;padding:30px
 .plist{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
 .plist span{background:#f4f6fb;border-radius:12px;padding:12px 6px;text-align:center;font-size:14px;font-weight:600}
 @media(max-width:900px){.cmp{overflow-x:auto}.crow{min-width:720px}.modes{grid-template-columns:1fr}.plist{grid-template-columns:repeat(3,1fr)}}
+
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.case{display:block;border-radius:20px;overflow:hidden;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);transition:.3s}
+.case:hover{transform:translateY(-5px);border-color:var(--orange)}
+.thumb{aspect-ratio:16/9;background-size:cover;background-position:center;position:relative}
+.thumb .play{position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(255,0,0,.9);display:grid;place-items:center;font-size:20px;color:#fff}
+.thumb .ep{position:absolute;left:12px;top:12px;background:var(--orange);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px}
+.cbody{padding:18px 18px 20px}
+.cbody b{display:block;font-size:16px;line-height:1.45;margin-bottom:8px}
+.cbody p{font-size:14px;color:rgba(255,255,255,.65)}
+.cmeta{display:flex;justify-content:space-between;margin-top:12px;font-size:13px;color:var(--gold)}
+.csum{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.csum div{border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:20px}
+.csum b{font-size:18px}
+.csum p{font-size:14px;color:rgba(255,255,255,.6);margin-top:4px}
+@media(max-width:900px){.cases,.csum{grid-template-columns:1fr}}
 /* reveal */
 .r{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
 .r.v{opacity:1;transform:none}
@@ -188,6 +204,7 @@ footer{background:#04060f;color:rgba(255,255,255,.4);font-size:13px;padding:30px
     <li><a href="#trust">왜 다타랩</a></li>
     <li><a href="#benefit">소구포인트</a></li>
     <li><a href="#cost">비용 비교</a></li>
+    <li><a href="#collab">협업 사례</a></li>
     <li><a href="#script">멘트</a></li>
     <li><a href="#guide">가이드</a></li>
   </ul>
@@ -301,9 +318,34 @@ footer{background:#04060f;color:rgba(255,255,255,.4);font-size:13px;padding:30px
   </div>
 </section>
 
+<section class="s dark" id="collab">
+  <div class="w">
+    <div class="label r"><span>06</span>Collaboration</div>
+    <h2 class="r">크리에이터 협업 사례<br><span style="color:var(--sky)">채널주인 부재중 × 다타랩</span></h2>
+    <p class="desc r">구독자 116만 채널 「채널주인 부재중」과 3편 시리즈로 협업했습니다. 상담 → 출고 → 첫 드라이브까지, 출연자의 실제 첫 차 이야기로 이어졌습니다.</p>
+    <div class="cases">
+      <a class="case r" href="https://youtu.be/DujwLpKaq60" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/DujwLpKaq60/hqdefault.jpg)"><span class="play">▶</span><span class="ep">EP.1 상담</span></div>
+        <div class="cbody"><b>올해 가장 큰 결심을 한 희재커플</b><p>차알못 출연자가 2주 고민하던 첫 차 문제를 다타랩 30분 상담으로 해결</p><div class="cmeta"><span>조회수 24.8만회</span><span>2026.08.22</span></div></div>
+      </a><a class="case r" href="https://youtu.be/NCeFpKIGVvw" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/NCeFpKIGVvw/hqdefault.jpg)"><span class="play">▶</span><span class="ep">EP.2 출고</span></div>
+        <div class="cbody"><b>첫 차로 BMW를 뽑은 33살 장롱면허남의 이야기</b><p>장롱면허 2년 차가 장기렌트로 첫 차(BMW)를 출고</p><div class="cmeta"><span>조회수 31.3만회</span><span>2026.09.12</span></div></div>
+      </a><a class="case r" href="https://youtu.be/LSytlw7_Z3Q" target="_blank" rel="noopener">
+        <div class="thumb" style="background-image:url(https://i.ytimg.com/vi/LSytlw7_Z3Q/hqdefault.jpg)"><span class="play">▶</span><span class="ep">EP.3 드라이브</span></div>
+        <div class="cbody"><b>남친의 헌팅을 보게 될 줄은 몰랐던 을왕리 드라이브</b><p>출고한 차로 떠난 첫 드라이브 — 일상 콘텐츠 속에 자연스럽게 노출</p><div class="cmeta"><span>조회수 48만회</span><span>2026.10.08</span></div></div>
+      </a>
+    </div>
+    <div class="csum r">
+      <div><b>3편 누적 100만+</b><p>시리즈 합산 조회수 약 104만 회</p></div>
+      <div><b>무료 상담 소구</b><p>“내 소득에 맞는 차”, “드림카를 타려면 얼마나 벌어야 하는지” 전화 한 통으로</p></div>
+      <div><b>채널 전용 혜택</b><p>전용 이벤트 링크 계약 시 정비 쿠폰·사은품 제공</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="s" style="background:#eef1f8">
   <div class="w">
-    <div class="label r"><span>06</span>Myth Breaker</div>
+    <div class="label r"><span>07</span>Myth Breaker</div>
     <h2 class="r">“장기렌트는 비싸다”는 오해,<br>이렇게 풀립니다.</h2>
     <div class="myth">
       <div class="card no r"><h4>시청자 생각</h4><div class="big">“현금으로 사는 게 제일 싸지.”<br>“장기렌트는 비싸잖아.”</div></div>
@@ -316,7 +358,7 @@ footer{background:#04060f;color:rgba(255,255,255,.4);font-size:13px;padding:30px
 
 <section class="s" id="script">
   <div class="w">
-    <div class="label r"><span>07</span>Sample Lines</div>
+    <div class="label r"><span>08</span>Sample Lines</div>
     <h2 class="r">참고 문구</h2>
     <p class="desc r">소구점을 말로 옮기면 이런 느낌입니다. 채널 톤에 맞게 자유롭게 바꿔 주세요.</p>
     <div class="lines">
@@ -334,7 +376,7 @@ footer{background:#04060f;color:rgba(255,255,255,.4);font-size:13px;padding:30px
 
 <section class="s" id="guide" style="background:#eef1f8">
   <div class="w">
-    <div class="label r"><span>08</span>Guidelines</div>
+    <div class="label r"><span>09</span>Guidelines</div>
     <h2 class="r">꼭 지켜 주세요</h2>
     <div class="guide">
       <div class="g do r"><div class="c">✓</div><div><b>유료광고 표기</b><p>영상 내 표기와 더보기란 표기를 함께 해 주세요.</p></div></div>
