@@ -190,6 +190,56 @@ footer{background:#06123a;color:rgba(255,255,255,.55);font-size:13px;padding:30p
   section.s{padding:80px 0}
 }
 @media print{nav,.scroll{display:none}.r{opacity:1;transform:none}.hero{min-height:auto}section.s{padding:60px 0}}
+
+/* 모바일 최적화 (2026-11-18) */
+html,body{overflow-x:hidden;max-width:100%}
+.stats>*,.cards3>*,.ben>*,.stress>*,.mini>*,.qs>*,.why2>*,.modes>*,.vids>*,.guide>*{min-width:0}
+img{max-width:100%}
+@media(max-width:600px){
+  .w{padding:0 18px}
+  h2{font-size:26px}
+  .desc{font-size:15px}
+  section.s{padding:64px 0}
+  .hero .w{padding-top:80px;padding-bottom:60px}
+  .hero .meta{gap:16px 24px}
+  .stats{gap:10px}
+  .stat{padding:20px 16px}
+  .stat .n{font-size:28px}
+  .stat .n sup{font-size:14px}
+  .stress{grid-template-columns:1fr 1fr;gap:10px}
+  .stress div{padding:16px 14px}
+  .b{padding:20px;gap:14px}
+  .b .no{width:36px;height:36px;border-radius:10px;font-size:14px}
+  .b h3{font-size:17px}
+  .b p{font-size:14px}
+  .ins{padding:24px}
+  .opp .row{grid-template-columns:1fr 22px 1fr;padding:12px 14px;font-size:13px;gap:4px}
+  .opp-sum{font-size:16px}
+  .ans{padding:22px}
+  .why2 .pct{font-size:28px}
+  .q{font-size:16px;padding:18px}
+  .cmp{overflow:visible;border:none;background:none;display:grid;gap:12px}
+  .crow{min-width:0!important;display:grid;grid-template-columns:1fr 1fr;text-align:left;gap:6px 12px;padding:18px;border-radius:18px;border:1px solid var(--line)}
+  .crow.head{display:none}
+  .crow.buy{background:#fff}
+  .crow .nm{grid-column:1/-1;font-size:17px}
+  .crow>div:not(.nm){font-size:14px}
+  .crow>div:nth-child(2)::before{content:"출고가 ";opacity:.7;font-weight:400}
+  .crow>div:nth-child(3)::before{content:"이자 ";opacity:.7;font-weight:400}
+  .crow>div:nth-child(4)::before{content:"자동차세 ";opacity:.7;font-weight:400}
+  .crow>div:nth-child(5)::before{content:"취등록세 ";opacity:.7;font-weight:400}
+  .crow>div:nth-child(6)::before{content:"보험료(5년) ";opacity:.7;font-weight:400}
+  .crow>div:nth-child(7){grid-column:1/-1;font-size:18px!important}
+  .crow>div:nth-child(7)::before{content:"월 납입료 ";opacity:.7;font-weight:400;font-size:14px}
+  .offer{padding:20px}
+  .offer b{font-size:17px}
+  .offer a{width:100%;text-align:center}
+  .partners{padding:20px}
+  .line{padding:16px 18px}
+  .line q{font-size:15px}
+  .cta{padding:80px 0}
+  .btn{padding:14px 28px;font-size:16px}
+}
 </style>
 </head>
 <body>
