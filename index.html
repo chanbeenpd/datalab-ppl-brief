@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DATALAB × 황형구 | PPL Creative Brief</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<style>
+:root{
+  --navy:#070b1a;--navy2:#0e1530;--blue:#2f6bff;--sky:#7fb0ff;--orange:#ff6a2b;--gold:#ffc35a;
+  --ink:#0f1424;--sub:#6a7388;--line:#e7eaf2;--paper:#f5f7fc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Pretendard Variable",Pretendard,"Malgun Gothic",sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+.w{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+nav.on{background:rgba(7,11,26,.85);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{color:#fff;font-weight:800;letter-spacing:.08em;font-size:15px}
+.logo i{font-style:normal;color:var(--orange)}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{color:rgba(255,255,255,.7);font-size:14px;font-weight:500}
+nav ul a:hover{color:#fff}
+
+/* hero */
+.hero{position:relative;min-height:100vh;background:var(--navy);color:#fff;display:flex;align-items:center;overflow:hidden}
+.hero:before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(47,107,255,.45),transparent 60%);top:-300px;right:-250px;filter:blur(10px);animation:float 12s ease-in-out infinite}
+.hero:after{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,43,.28),transparent 60%);bottom:-320px;left:-200px;animation:float 14s ease-in-out infinite reverse}
+@keyframes float{50%{transform:translate(40px,30px)}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+.hero .w{position:relative;z-index:2;padding-top:90px;padding-bottom:70px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:99px;font-size:13px;color:rgba(255,255,255,.8);letter-spacing:.04em}
+.eyebrow b{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px var(--orange)}
+.hero h1{font-size:clamp(40px,7vw,84px);line-height:1.08;font-weight:800;letter-spacing:-.03em;margin:26px 0 22px}
+.hero h1 .x{color:var(--orange);font-weight:300;margin:0 .15em}
+.hero h1 .grad{background:linear-gradient(90deg,#fff,var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:clamp(17px,2vw,21px);color:rgba(255,255,255,.72);max-width:640px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1)}
+.hero .meta div{font-size:13px;color:rgba(255,255,255,.5)}
+.hero .meta strong{display:block;color:#fff;font-size:16px;font-weight:600;margin-top:2px}
+.scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.4);font-size:12px;letter-spacing:.2em}
+
+/* sections */
+section.s{padding:120px 0}
+.label{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--blue);text-transform:uppercase}
+.label span{color:var(--orange);margin-right:10px}
+h2{font-size:clamp(28px,4vw,44px);line-height:1.25;letter-spacing:-.025em;font-weight:800;margin:14px 0 18px}
+.desc{color:var(--sub);font-size:17px;max-width:680px}
+.dark{background:var(--navy);color:#fff}
+.dark .desc{color:rgba(255,255,255,.6)}
+.dark .label{color:var(--sky)}
+
+/* message */
+.quote{margin-top:44px;font-size:clamp(24px,3.4vw,38px);font-weight:700;line-height:1.4;letter-spacing:-.02em}
+.quote em{font-style:normal;background:linear-gradient(transparent 62%,rgba(255,106,43,.45) 62%)}
+.stress{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.stress div{border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px 20px;background:rgba(255,255,255,.03)}
+.stress small{color:rgba(255,255,255,.45);font-size:12px;letter-spacing:.1em}
+.stress b{display:block;font-size:18px;margin:6px 0 4px}
+.stress p{font-size:14px;color:rgba(255,255,255,.6)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 24px;position:relative;overflow:hidden;transition:.3s}
+.stat:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(15,20,36,.25)}
+.stat .n{font-size:44px;font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.stat .n sup{font-size:20px;color:var(--orange);margin-left:2px}
+.stat .t{margin-top:12px;font-weight:700}
+.stat .d{font-size:14px;color:var(--sub);margin-top:2px}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.perk{background:linear-gradient(135deg,#fff,#f0f4ff);border:1px solid var(--line);border-radius:22px;padding:24px}
+.perk .ic{font-size:26px}
+.perk b{display:block;margin:10px 0 4px;font-size:17px}
+.perk p{font-size:14px;color:var(--sub)}
+
+/* benefits */
+.ben{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:50px}
+.b{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;gap:20px}
+.b .no{flex:none;width:46px;height:46px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800}
+.b h3{font-size:19px;margin-bottom:6px;letter-spacing:-.01em}
+.b p{color:var(--sub);font-size:15px}
+.b .vs{display:flex;gap:8px;margin-top:12px;font-size:13px;flex-wrap:wrap}
+.b .vs span{padding:5px 10px;border-radius:99px;background:#f1f3f8;color:var(--sub)}
+.b .vs span.y{background:#eaf1ff;color:var(--blue);font-weight:600}
+.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.mini div{border:1px dashed #cfd6e6;border-radius:16px;padding:16px;font-size:14px;color:var(--sub)}
+.mini b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+
+/* myth */
+.myth{display:grid;grid-template-columns:1fr 60px 1fr;align-items:stretch;margin-top:50px}
+.myth .card{border-radius:24px;padding:34px}
+.myth .no{background:#e9ecf3}
+.myth .yes{background:linear-gradient(135deg,var(--blue),#5b8cff);color:#fff}
+.myth h4{font-size:13px;letter-spacing:.14em;opacity:.65;margin-bottom:12px}
+.myth .big{font-size:24px;font-weight:800;line-height:1.4}
+.myth ul{margin-top:14px;padding-left:18px;font-size:15px}
+.myth .arr{display:grid;place-items:center;font-size:28px;color:var(--orange)}
+.flow{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
+.flow span{background:#fff;border:1px solid var(--line);padding:10px 16px;border-radius:99px;font-size:14px;font-weight:600}
+.flow i{font-style:normal;color:var(--orange)}
+
+/* ideas */
+.ideas{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;margin-top:50px}
+.idea{border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:30px;background:rgba(255,255,255,.03);position:relative}
+.idea.best{background:linear-gradient(160deg,rgba(255,106,43,.22),rgba(47,107,255,.12));border-color:rgba(255,106,43,.55)}
+.idea .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;padding:5px 10px;border-radius:99px;background:rgba(255,255,255,.1);margin-bottom:16px}
+.idea.best .tag{background:var(--orange)}
+.idea h3{font-size:22px;line-height:1.35;margin-bottom:12px;letter-spacing:-.02em}
+.idea p{font-size:15px;color:rgba(255,255,255,.68)}
+.idea ul{margin-top:14px;padding-left:18px;font-size:14px;color:rgba(255,255,255,.75)}
+.idea li{margin-bottom:6px}
+.idea .len{margin-top:18px;font-size:12px;color:var(--gold);letter-spacing:.06em}
+.why{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.why span{font-size:13px;padding:7px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75)}
+
+/* script */
+.lines{margin-top:46px;display:grid;gap:12px}
+.line{display:grid;grid-template-columns:140px 1fr;gap:20px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 24px;transition:.25s}
+.line:hover{border-color:var(--blue)}
+.line small{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--blue)}
+.line q{font-size:18px;font-weight:600;quotes:"“" "”"}
+.copies{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.copies span{background:var(--ink);color:#fff;padding:9px 16px;border-radius:99px;font-size:14px;font-weight:600}
+
+/* guide */
+.guide{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:46px}
+.g{display:flex;gap:16px;padding:24px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+.g .c{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff}
+.g.do .c{background:#19b26b}.g.dont .c{background:#ef4b4b}
+.g b{display:block;margin-bottom:2px}
+.g p{font-size:14px;color:var(--sub)}
+
+/* cta */
+.cta{background:var(--navy);color:#fff;text-align:center;padding:130px 0;position:relative;overflow:hidden}
+.cta:before{content:"";position:absolute;inset:auto;width:800px;height:800px;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,106,43,.3),transparent 60%)}
+.cta .w{position:relative}
+.cta h2{font-size:clamp(34px,5vw,60px)}
+.cta p{color:rgba(255,255,255,.65);font-size:17px}
+.btn{display:inline-block;margin-top:34px;background:var(--orange);color:#fff;font-weight:700;padding:16px 34px;border-radius:99px;font-size:17px;box-shadow:0 14px 40px -10px rgba(255,106,43,.7)}
+footer{background:#04060f;color:rgba(255,255,255,.4);font-size:13px;padding:30px 0;text-align:center}
+
+/* reveal */
+.r{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.r.v{opacity:1;transform:none}
+
+@media(max-width:900px){
+  nav ul{display:none}
+  .stress,.stats,.mini{grid-template-columns:repeat(2,1fr)}
+  .perks,.ideas,.ben,.guide{grid-template-columns:1fr}
+  .myth{grid-template-columns:1fr}.myth .arr{transform:rotate(90deg);padding:10px}
+  .line{grid-template-columns:1fr;gap:6px}
+  section.s{padding:84px 0}
+}
+@media print{nav,.scroll{display:none}.r{opacity:1;transform:none}.hero{min-height:auto}section.s{padding:60px 0}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="w">
+  <div class="logo">DATALAB <i>×</i> 황형구</div>
+  <ul>
+    <li><a href="#message">핵심 메시지</a></li>
+    <li><a href="#trust">왜 다타랩</a></li>
+    <li><a href="#benefit">소구포인트</a></li>
+    <li><a href="#idea">기획안</a></li>
+    <li><a href="#script">멘트</a></li>
+    <li><a href="#guide">가이드</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero">
+  <div class="grid-bg"></div>
+  <div class="w">
+    <span class="eyebrow"><b></b>PPL CREATIVE BRIEF · 2026</span>
+    <h1><span class="grad">DATALAB</span><span class="x">×</span>황형구</h1>
+    <p class="lead">신차 장기렌트 다타랩을 황형구 채널답게, 솔직하고 재밌게.<br>영상 기획에 필요한 소구포인트를 한 페이지에 담았습니다.</p>
+    <div class="meta">
+      <div>브랜드<strong>다타랩 · (주)지엔에이</strong></div>
+      <div>카테고리<strong>신차 장기렌트</strong></div>
+      <div>형식<strong>유튜브 유료광고(PPL)</strong></div>
+      <div>목표 행동<strong>무료 견적 신청</strong></div>
+    </div>
+  </div>
+  <div class="scroll">SCROLL ↓</div>
+</header>
+
+<section class="s dark" id="message">
+  <div class="w">
+    <div class="label r"><span>01</span>Key Message</div>
+    <h2 class="r">차 살 때 머리 아픈 일,<br>매달 렌트료 한 번으로 정리됩니다.</h2>
+    <p class="desc r">목돈, 세금, 보험, 사고 처리, 중고차 처분까지. 자동차를 ‘소유’하면 따라오는 스트레스를 덜어 주는 것이 장기렌트의 본질입니다.</p>
+    <div class="stress">
+      <div class="r"><small>STRESS 01</small><b>목돈</b><p>초기 비용 0원(무보증) 출고 가능 · 심사 승인 시</p></div>
+      <div class="r"><small>STRESS 02</small><b>사고 · 보험</b><p>렌트사로 사고 접수 · 내 보험 등급 영향 없음</p></div>
+      <div class="r"><small>STRESS 03</small><b>중고차 처분</b><p>만기에 반납 또는 인수 선택 · 흥정 없음</p></div>
+      <div class="r"><small>STRESS 04</small><b>사업자 세금</b><p>세금계산서로 비용 처리 · 요건 충족 시</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="trust">
+  <div class="w">
+    <div class="label r"><span>02</span>Why DATALAB</div>
+    <h2 class="r">장기렌트는<br>규모가 큰 회사를 골라야 합니다.</h2>
+    <p class="desc r">대량 구매로 특판 출고 할인을 받고, 여러 금융사의 조건을 비교할 수 있어야 고객에게 더 좋은 견적이 돌아갑니다.</p>
+    <div class="stats">
+      <div class="stat r"><div class="n" data-n="2000">0<sup>+</sup></div><div class="t">월 출고 대수</div><div class="d">회사 집계 기준</div></div>
+      <div class="stat r"><div class="n" data-n="50000">0<sup>+</sup></div><div class="t">누적 판매</div><div class="d">2017년 설립 이후</div></div>
+      <div class="stat r"><div class="n" data-n="14">0</div><div class="t">전국 지점</div><div class="d">전국 지점 운영</div></div>
+      <div class="stat r"><div class="n" data-n="525">0<sup>억</sup></div><div class="t">2024년 매출</div><div class="d">자체 플랫폼 「다타랩」</div></div>
+    </div>
+    <div class="perks">
+      <div class="perk r"><div class="ic">🏦</div><b>공식 금융사 제휴</b><p>여러 금융사의 승인 조건·금리를 비교해 견적을 냅니다.</p></div>
+      <div class="perk r"><div class="ic">🎁</div><b>다타랩 케어</b><p>신차 계약 고객 전원 · 스마트키 파손·분실, 휠·타이어 1개 파손 보장</p></div>
+      <div class="perk r"><div class="ic">🛠️</div><b>정비 쿠폰북</b><p>스피드메이트 정비 항목 할인 쿠폰 제공</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="benefit" style="padding-top:0">
+  <div class="w">
+    <div class="label r"><span>03</span>Selling Points</div>
+    <h2 class="r">“차 사면 내 일” 이<br>“렌트사가 알아서” 로 바뀝니다.</h2>
+    <div class="ben">
+      <div class="b r"><div class="no">01</div><div><h3>목돈 없이 신차</h3><p>대출·저축 없이, 심사 승인 시 초기 비용 0원(무보증) 조건으로 출고할 수 있습니다. 취득세·등록세·자동차세는 렌트사가 처리하고 월 렌트료에 포함됩니다.</p><div class="vs"><span>구매: 수천만 원 목돈</span><span class="y">장기렌트: 초기 비용 0원 가능</span></div></div></div>
+      <div class="b r"><div class="no">02</div><div><h3>사고 나도 보험 등급 그대로</h3><p>사고가 나면 렌트사 고객센터에 접수하고, 계약에서 정한 면책금을 내면 수리가 진행됩니다. 내 개인 자동차보험 등급에는 영향이 없습니다.</p><div class="vs"><span>구매: 할증 · 등급 하락</span><span class="y">장기렌트: 내 등급 영향 없음</span></div></div></div>
+      <div class="b r"><div class="no">03</div><div><h3>중고차 흥정 끝</h3><p>계약 만기에 딜러와 감가를 두고 씨름할 필요가 없습니다. 약정에 따라 반납하거나 인수하면 됩니다.</p><div class="vs"><span>구매: 감가 · 처분 스트레스</span><span class="y">장기렌트: 반납 / 인수 선택</span></div></div></div>
+      <div class="b r"><div class="no">04</div><div><h3>사업자는 비용 처리까지</h3><p>매달 발행되는 전자세금계산서로, 요건을 충족하면 렌트료를 비용 처리할 수 있습니다(업무용 차량 한도 적용 · 예: 연 최대 1,500만 원).</p><div class="vs"><span class="y">경차 · 카니발 부가세 10% 환급</span></div></div></div>
+    </div>
+    <div class="mini">
+      <div class="r"><b>계약 2~5년</b>보험료·자동차세·차량 이자 월 렌트료에 포함</div>
+      <div class="r"><b>재산세 · 건보료 제외</b>내 명의 재산이 아니라 산정에서 빠짐</div>
+      <div class="r"><b>신용 이력 영향 없음</b>금융 이력·신용도 변동 없음</div>
+      <div class="r"><b>첫차라면 더 유리</b>보험 가입 경력 최대 3년까지 인정</div>
+    </div>
+  </div>
+</section>
+
+<section class="s" style="background:#eef1f8">
+  <div class="w">
+    <div class="label r"><span>04</span>Myth Breaker</div>
+    <h2 class="r">시청자의 오해를 깨는 순간,<br>광고가 정보가 됩니다.</h2>
+    <div class="myth">
+      <div class="card no r"><h4>시청자 생각</h4><div class="big">“현금으로 사는 게 제일 싸지.”<br>“장기렌트는 비싸잖아.”</div></div>
+      <div class="arr r">→</div>
+      <div class="card yes r"><h4>알고 보면</h4><div class="big">규모 큰 렌트사는<br>‘특판 출고’가 됩니다.</div><ul><li>제조사에서 영업용·대량으로 구매 → 특판 할인</li><li>여러 금융사의 승인 조건·금리 비교 → 더 유리한 견적</li></ul></div>
+    </div>
+    <div class="flow r"><span>오해 제기</span><i>→</i><span>반전 (특판 출고)</span><i>→</i><span>규모가 중요한 이유</span><i>→</i><span>월 2,000대 이상 출고 다타랩</span><i>→</i><span>무료 견적</span></div>
+  </div>
+</section>
+
+<section class="s dark" id="idea">
+  <div class="w">
+    <div class="label r"><span>05</span>Creative Ideas</div>
+    <h2 class="r">황형구답게 녹이는<br>세 가지 방법</h2>
+    <p class="desc r">먹방 · 하루 체험 · 솔직 리뷰, 그리고 거침없는 말투. 광고도 ‘솔직하게 따져 보는’ 톤일 때 가장 자연스럽습니다.</p>
+    <div class="ideas">
+      <div class="idea best r"><span class="tag">RECOMMENDED</span><h3>“장기렌트,<br>솔직 리뷰 해보겠습니다”</h3><p>형구님이 진짜 타고 싶은 차 한 대를 정하고, 다타랩 무료 견적을 직접 받아 봅니다.</p><ul><li>할부 vs 장기렌트, 나란히 놓고 솔직하게 비교</li><li>초기 비용 0원 · 세금 포함 · 보험 등급 영향 없음에서 리액션</li><li>채널의 ‘솔직 리뷰’ 시리즈 톤 그대로</li></ul><div class="len">메인 PPL · 2~3분</div></div>
+      <div class="idea r"><span class="tag">IDEA B</span><h3>먹방 토크에<br>자연스럽게</h3><p>먹다가 “차 바꾸고 싶은데 목돈이…” 한탄 → “요즘은 이렇게 탄다더라”.</p><ul><li>오해 깨기 흐름 하나만 사용</li><li>부담 없는 길이</li></ul><div class="len">중간 삽입 · 30~60초</div></div>
+      <div class="idea r"><span class="tag">IDEA C</span><h3>장기렌트 회사<br>하루 체험</h3><p>소방관·육아 체험처럼 다타랩 지점에서 하루 일해 보기.</p><ul><li>상담 · 견적 비교 · 출고 현장</li><li>출고 규모를 눈으로 보여 줌</li></ul><div class="len">브랜디드 · 촬영 협조 필요</div></div>
+    </div>
+    <div class="why r"><span>#솔직리뷰</span><span>#하루체험</span><span>#먹방토크</span><span>#직접견적</span><span>#오해깨기</span></div>
+  </div>
+</section>
+
+<section class="s" id="script">
+  <div class="w">
+    <div class="label r"><span>06</span>Ready-to-use Lines</div>
+    <h2 class="r">그대로 써도 되는 멘트</h2>
+    <p class="desc r">형구님 말투에 맞게 자유롭게 바꿔 주세요.</p>
+    <div class="lines">
+      <div class="line r"><small>HOOK</small><q>현금으로 차 사는 게 제일 싸다고요? 아닐 수도 있습니다.</q></div>
+      <div class="line r"><small>목돈 · 세금</small><q>차 사려면 취득세에 보험에 세금까지… 장기렌트는 그게 다 월 요금에 들어가 있어요.</q></div>
+      <div class="line r"><small>사고 · 보험</small><q>사고 나도 렌트사에 접수하면 되고, 내 보험 등급엔 영향이 없대요. 이게 진짜 크더라고요.</q></div>
+      <div class="line r"><small>중고차</small><q>계약 끝나면 딜러랑 싸울 필요 없어요. 반납할지 인수할지 고르면 돼요.</q></div>
+      <div class="line r"><small>사업자</small><q>사업하시는 분들은 요건만 맞으면 세금계산서로 비용 처리도 돼요.</q></div>
+      <div class="line r"><small>CTA</small><q>더보기란 링크로 무료 견적 받아 보세요. 원하는 차 조건을 여러 금융사로 비교해 줍니다.</q></div>
+    </div>
+    <div class="copies r"><span>월 2천 대 이상 출고</span><span>초기 비용 없이 신차 출고</span><span>국내 공식 금융사 제휴</span><span>“무료 견적 받아보세요”</span></div>
+    <p class="desc r" style="font-size:14px;margin-top:10px">자주 쓰는 카피입니다. 영상과 어울리지 않으면 쓰지 않으셔도 괜찮습니다.</p>
+  </div>
+</section>
+
+<section class="s" id="guide" style="background:#eef1f8">
+  <div class="w">
+    <div class="label r"><span>07</span>Guidelines</div>
+    <h2 class="r">꼭 지켜 주세요</h2>
+    <div class="guide">
+      <div class="g do r"><div class="c">✓</div><div><b>유료광고 표기</b><p>영상 내 표기와 더보기란 표기를 함께 해 주세요.</p></div></div>
+      <div class="g do r"><div class="c">✓</div><div><b>조건 안내</b><p>무보증 출고·면책금은 “계약 조건·심사에 따라 다르다”를 함께 말해 주세요.</p></div></div>
+      <div class="g dont r"><div class="c">✕</div><div><b>확인 안 된 금액</b><p>월 렌트료·할인율 등 구체적 숫자는 촬영 전 다타랩과 확인한 것만 사용해 주세요.</p></div></div>
+      <div class="g dont r"><div class="c">✕</div><div><b>타사 비교 · 비방</b><p>다른 렌트사를 실명으로 비교하거나 비방하지 말아 주세요.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="w">
+    <div class="label r" style="color:var(--gold)">CALL TO ACTION</div>
+    <h2 class="r">“지금 바로<br>무료 견적 받아보세요”</h2>
+    <p class="r">황형구 채널 전용 견적 링크는 다타랩 담당자가 별도로 전달드립니다.</p>
+    <a class="btn r" href="https://data-gnacar.com/" target="_blank" rel="noopener">다타랩 바로가기</a>
+  </div>
+</section>
+
+<footer>(주)지엔에이 · 신차 장기렌트 다타랩 · 대표번호 1600-6384</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>40));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('v');
+  const n=e.target.querySelector?.('.n[data-n]')||(e.target.matches?.('.n[data-n]')?e.target:null);
+  if(n&&!n.dataset.done){n.dataset.done=1;const end=+n.dataset.n,sup=n.querySelector('sup')?.outerHTML||'';let t0=null;
+    const step=ts=>{t0??=ts;const p=Math.min((ts-t0)/1400,1),v=Math.round(end*(1-Math.pow(1-p,3)));n.innerHTML=v.toLocaleString('ko-KR')+sup;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+  io.unobserve(e.target)}),{threshold:.15});
+document.querySelectorAll('.r').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+if(matchMedia('print').matches)document.querySelectorAll('.r').forEach(el=>el.classList.add('v'));
+</script>
+</body>
+</html>
