@@ -242,8 +242,66 @@ img{max-width:100%}
   .cta{padding:80px 0}
   .btn{padding:14px 28px;font-size:16px}
 }
-.hero .kit{display:inline-block;margin:-6px 0 26px;padding:10px 18px;border-radius:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);font-size:clamp(16px,2vw,20px);color:#fff}
-.hero .kit b{color:#7ff0ff}
+.hero .kit{position:relative;display:inline-block;margin:6px 0 30px;padding:16px 30px;border-radius:18px;background:linear-gradient(120deg,rgba(0,171,206,.45),rgba(255,255,255,.08));font-size:clamp(20px,2.8vw,30px);font-weight:700;color:#fff;letter-spacing:-.01em}
+.hero .kit:before{content:"";position:absolute;inset:0;border-radius:18px;padding:1.5px;background:linear-gradient(120deg,#7ff0ff,rgba(255,255,255,.2),#7ff0ff);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.hero .kit b{color:#7ff0ff;font-weight:900}
+.hero .kit .yt{width:1.35em;height:auto;vertical-align:-.18em;margin-right:12px;filter:drop-shadow(0 4px 10px rgba(255,0,0,.35))}
+
+/* A~F 추가 (2026-11-19) */
+.case{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px}
+.case .tag,.trust .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--blue);padding:5px 12px;border-radius:99px}
+.case-h h3{font-size:clamp(20px,2.6vw,26px);margin:12px 0 4px;letter-spacing:-.02em}
+.case-h p{font-size:14px;color:var(--sub)}
+.bars{margin-top:22px;display:grid;gap:12px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 120px;align-items:center;gap:14px;font-size:15px}
+.bar-row span{color:var(--sub);font-weight:600}
+.bar-row b{text-align:right}
+.bar{height:16px;background:#eef1f8;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:#b8c2d8;border-radius:99px}
+.bar-row.good i{background:#7fa2ff}.bar-row.best i{background:linear-gradient(90deg,#1E53F2,#00ABCE)}
+.bar-row.best b{color:var(--blue)}
+.case-sum{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.case-sum div{background:var(--sky);border-radius:16px;padding:16px 18px;font-size:14px;color:var(--sub)}
+.case-sum b{display:block;font-size:28px;color:var(--blue);letter-spacing:-.02em}
+.route{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px}
+.route h3,.fit h3{font-size:clamp(19px,2.4vw,24px);letter-spacing:-.02em}
+.route h3 em{font-style:normal;color:var(--blue)}
+.route-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;margin-top:18px}
+.rt{border:1px solid var(--line);border-radius:18px;padding:20px}
+.rt.hi{background:linear-gradient(135deg,#1E53F2,#3b7dff);color:#fff;border:none}
+.rt small{font-size:12px;opacity:.75;letter-spacing:.04em}
+.rt b{display:block;font-size:20px;margin:4px 0 6px}
+.rt p{font-size:14px;line-height:1.6}
+.rt.hi strong{color:#7ff0ff}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.dc{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px}
+.dc .ic{font-size:26px}
+.dc h3{font-size:19px;margin:8px 0 6px}
+.dc p{font-size:15px;color:var(--sub)}
+.dc .vs{display:flex;gap:8px;margin-top:12px;font-size:13px;flex-wrap:wrap}
+.dc .vs span{padding:5px 10px;border-radius:99px;background:#f1f3f8;color:var(--sub)}
+.dc .vs span.y{background:var(--sky);color:var(--blue);font-weight:700}
+.fit{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px}
+.fit ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.fit li{display:flex;flex-direction:column;padding:14px 16px 14px 46px;border-radius:14px;background:#f6f8fd;position:relative}
+.fit li:before{content:"✓";position:absolute;left:14px;top:14px;width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:900;display:grid;place-items:center}
+.fit li b{font-size:16px}
+.fit li span{font-size:13px;color:var(--sub)}
+.trust{margin-top:16px;border-radius:24px;padding:36px 32px;background:linear-gradient(150deg,#081a52,#0B2A8C);color:#fff}
+.trust h3{font-size:clamp(24px,3.4vw,36px);line-height:1.3;margin:14px 0 22px;letter-spacing:-.02em}
+.trust h3 em{font-style:normal;color:#7ff0ff}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.trust-grid div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px}
+.trust-grid b{display:block;font-size:17px;margin-bottom:6px}
+.trust-grid p{font-size:14px;color:rgba(255,255,255,.75)}
+@media(max-width:700px){
+  .case,.route,.fit{padding:20px}.trust{padding:26px 20px}
+  .bar-row{grid-template-columns:1fr auto;gap:6px 10px}
+  .bar-row .bar{grid-column:1/-1;order:3}
+  .case-sum b{font-size:22px}
+  .route-grid,.duo,.trust-grid,.fit ul{grid-template-columns:1fr}
+  .dc{padding:20px}
+}
 </style>
 </head>
 <body>
@@ -268,7 +326,7 @@ img{max-width:100%}
     <span class="eyebrow"><b></b>PPL BRAND KIT · 2026</span>
     <div class="brand"><img src="img/logo.svg" alt="다타랩"></div>
     <h1>신차 장기렌트</h1>
-    <div class="kit">크리에이터를 위한 <b>다타랩 PPL 브랜드 키트</b></div>
+    <div class="kit"><svg class="yt" viewBox="0 0 28 20" aria-label="YouTube"><rect width="28" height="20" rx="5" fill="#FF0000"/><path d="M11 5.5v9l8-4.5z" fill="#fff"/></svg>크리에이터를 위한 <b>다타랩 PPL 브랜드 키트</b></div>
     <p class="lead">(주)지엔에이 · 다타랩 · 신차 장기렌트의 소구점을 한 페이지에 정리했습니다.<br>영상 기획에 필요한 부분만 골라 써 주세요.</p>
     <div class="meta">
       <div>브랜드<strong>다타랩 · (주)지엔에이</strong></div>
@@ -398,6 +456,53 @@ img{max-width:100%}
       <div class="crow buy"><div class="nm">신차 할부</div><div>43,470,000원</div><div>최저 5.8%</div><div>550,000원</div><div>2,715,623원</div><div>4,250,000원</div><div class="big">840,000원</div></div>
     </div>
     <p class="note r">※ 다타랩 공식 홈페이지 예시 기준. 차종·계약 기간·초기 비용·신용 조건에 따라 달라집니다.</p>
+    
+    <div class="case r">
+      <div class="case-h"><span class="tag">실제 비교 사례</span><h3>싼타페 3,554만 원, 할부 vs 장기렌트</h3><p>36개월 · 만기 인수 조건 · 보험·세금 포함 총비용 기준 (다타랩TV 영상)</p></div>
+      <div class="bars">
+        <div class="bar-row"><span>신차 할부</span><div class="bar"><i style="width:100%"></i></div><b>약 4,700만 원</b></div>
+        <div class="bar-row good"><span>장기렌트 무보증</span><div class="bar"><i style="width:93.6%"></i></div><b>약 4,400만 원</b></div>
+        <div class="bar-row best"><span>장기렌트 보증금 30%</span><div class="bar"><i style="width:89.4%"></i></div><b>약 4,200만 원</b></div>
+      </div>
+      <div class="case-sum"><div><b>458만 원</b>할부보다 저렴</div><div><b>160만 원</b>현금 구매보다도 저렴</div></div>
+      <p class="note">※ 보증금은 만기에 돌려받는 돈이라 총비용에서 제외. 신용·보험·차종·시기에 따라 달라집니다. <a href="https://youtu.be/pES5MmSEaJU" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">영상으로 보기 →</a></p>
+    </div>
+
+    <div class="route r">
+      <h3>왜 렌트가 더 싸게 나올 수 있을까 — <em>출고 방식</em>의 차이</h3>
+      <div class="route-grid">
+        <div class="rt hi"><small>렌트사 · 캐피탈사 주문</small><b>특판 출고</b><p>제조사에 대량·영업용으로 직접 주문 → <strong>면세가 + 특판 할인 10~25%</strong>. 미리 확보한 '특판 재고'는 빠르게 출고됩니다.</p></div>
+        <div class="rt"><small>대리점 재고</small><b>대리점 출고</b><p>원하는 차가 대리점에 있을 때 빠르게 받는 방식. 할인 폭은 특판보다 작은 경우가 많습니다.</p></div>
+      </div>
+      <p class="note">※ 할인율은 차종·시기·주문량에 따라 다릅니다. 어느 회사가 어떤 특판 재고를 가졌는지 아는 곳일수록 견적이 좋아집니다.</p>
+    </div>
+
+    <div class="duo">
+      <div class="dc r"><span class="ic">💸</span><h3>돈의 주도권은 내가</h3><p>선납금을 0%로도, 10%로도 — 내가 정합니다. 차에 묶였을 목돈을 그대로 굴릴 수 있습니다.</p><div class="vs"><span>할부: 선납금 부담 큼</span><span class="y">렌트: 선납 0%부터 선택</span></div></div>
+      <div class="dc r"><span class="ic">🔁</span><h3>만기엔 시세 보고 결정</h3><p>만기 때 중고 시세가 인수가보다 높으면 인수, 낮으면 부담 없이 반납. 감가 위험은 렌트사가 집니다.</p><div class="vs"><span class="y">인수</span><span class="y">반납</span><span>중고 처분 스트레스 없음</span></div></div>
+    </div>
+
+    <div class="fit r">
+      <h3>이런 분께 특히 유리합니다</h3>
+      <ul>
+        <li><b>보험료가 비싸게 나오는 분</b><span>사회초년생 · 만 26세 미만 · 보험 경력이 짧은 분</span></li>
+        <li><b>목돈을 묶어 두기 싫은 분</b><span>초기 비용 없이 시작하고 여윳돈은 운용</span></li>
+        <li><b>재산·신용 기록에 잡히기 싫은 분</b><span>내 명의 자산·대출로 잡히지 않음</span></li>
+        <li><b>사업자</b><span>세금계산서로 비용 처리 · 경차·카니발 부가세 환급</span></li>
+        <li><b>알아볼 시간이 아까운 분</b><span>보험·세금·정비·처분까지 렌트사가 한 번에</span></li>
+      </ul>
+    </div>
+
+    <div class="trust r">
+      <span class="tag">다타랩이 가격을 공개하는 이유</span>
+      <h3>“처음 제시한 견적,<br><em>그대로 출고됩니다.</em>”</h3>
+      <div class="trust-grid">
+        <div><b>숨길 수 없는 구조</b><p>전국 대기업 금융사에서 나온 견적을 그대로 공유합니다. 가격을 부풀리거나 속이기 어려운 구조입니다.</p></div>
+        <div><b>미끼 가격 없음</b><p>사이트엔 싸게 걸고 상담하면 견적이 바뀌는 곳이 많습니다. 다타랩은 영상에서 가격을 공개하고 설명합니다.</p></div>
+        <div><b>비교해 보셔도 좋습니다</b><p>특가가 의심된다면 다른 업체와 견적을 비교해 보세요. 비교하고 연락 주셔도 충분합니다.</p></div>
+      </div>
+    </div>
+
     <div class="modes">
       <div class="mode r"><b>무보증</b><p>초기 비용 없이 타기</p></div>
       <div class="mode r"><b>보증금</b><p>보증금 내고 만기에 돌려받기</p></div>
